@@ -203,6 +203,9 @@ local Window = OrionLib:MakeWindow({Name = "Ability wars--by jude/rev", HidePrem
 getgenv().autorespawn = true;
 getgenv().KILLAURA = true;
 getgenv().CRASH = true;
+getgenv().SPLEEF = true;
+getgenv().JERK = true;
+
 local autospawn
 
 local Tab = Window:MakeTab({
@@ -266,7 +269,7 @@ end
         end
     end
 end)
-Tab:AddParagraph("IMPORANT","If you do die rexecute script and retoggle it for it to work again I cant fix this glitch")
+Tab:AddParagraph("IMPORANT","If you do die rexecute script and retoggle(for auto tp when low only)")
 Tab:AddToggle({
     Name = "Auto Tp when low hp",
     Default = (bool),
@@ -276,14 +279,35 @@ Tab:AddToggle({
     
 })
 
+
+
+
+
+
+
+
 Tab:AddToggle({
-	Name = "Kill aura - NOT WORKING YET",
+	Name = "Spleef fucker",
 	Default = (bool),
 	Callback = function(bool)
-		getgenv().KILLAURA = bool
+		getgenv().SPLEEF = bool
 		print(bool)
 		if bool then
-		KILLAURA()
+		Spleeffucker()
+		end
+	end    
+    
+})
+
+
+Tab:AddToggle({
+	Name = "Jerk off",
+	Default = (bool),
+	Callback = function(bool)
+		getgenv().JERK = bool
+		print(bool)
+		if bool then
+		Jerkoff()
 		end
 	end    
     
@@ -292,17 +316,25 @@ Tab:AddToggle({
 
 
 
-Tab:AddParagraph("IMPORANT","Use these as normal")
+local respawn = game:GetService("ReplicatedStorage"):WaitForChild("Remote Events").Respawn
+local plr = game.Players.LocalPlayer
+getgenv().autorespawn = false
+local hm ;hm = hookmetamethod(respawn, "__namecall", function(z, ...)
+    if z == respawn and getnamecallmethod() == 'FireServer' and ... == nil and getgenv().autorespawn == true then
+        local d;d=plr.CharacterAppearanceLoaded:Connect(function()
+            wait()
+            firetouchinterest(plr.Character:WaitForChild('HumanoidRootPart'), workspace.Portals.Arena, 0)
+            d:Disconnect()
+        end)
+    end
+    return hm(z, ...)
+end)
 Tab:AddToggle({
-	Name = "Auto respawn - NOT WORKING YET",
-	Default = (bool),
-	Callback = function(bool)
-		getgenv().autorespawn = bool
-		print(bool)
-		if bool then
-		    autorespawn()
-		    end
-	end    
+    Name = "Auto respawn-credits to am noob",
+    Default = (bool),
+    Callback = function(bool)
+        getgenv().autorespawn = bool
+    end
 })
 
 
@@ -324,18 +356,7 @@ end
 
 
 
-Tab:AddButton({
-	Name = "spleef fucker",
-	Callback = function()
-for _,v in pairs(game:GetService("Workspace")["Spleef Arena"].Snow:GetChildren()) do
-if v:IsA"Part" then
-game:GetService"Players".LocalPlayer.Character:FindFirstChild"HumanoidRootPart".CFrame = v.CFrame
 
-end
-end
-      		
-  	end    
-})
 
 
 Tab:AddParagraph("WARNING","For the seat one you need 500 punches")
@@ -366,10 +387,26 @@ Tab:AddButton({
 	Name = "GODMODE",
 	Callback = function()
 game:GetService("ReplicatedStorage"):FindFirstChild("Remote Events").Respawn:FireServer()
-      		wait(6)
+      		wait(5)
       		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(19.2449322, 19.0389709, 0.135073155, -0.0263777822, 1.22689926e-07, 0.999652028, -1.6278765e-08, 1, -1.23162181e-07, -0.999652028, -1.95218472e-08, -0.0263777822)
   	end    
 })
+
+Tab:AddButton({
+	Name = "Get kick-credits to am noob",
+	Callback = function()
+local args = {
+    [1] = "Gain Kick"
+}
+
+game:GetService("ReplicatedStorage"):FindFirstChild("Remote Events").BuyItem:FireServer(unpack(args))
+wait(1)
+game:GetService("ReplicatedStorage"):FindFirstChild("Remote Events").Respawn:FireServer()
+
+  	end    
+})
+
+
 
 
 local Tab = Window:MakeTab({
@@ -453,5 +490,26 @@ wait()
 game:GetService("ReplicatedStorage"):FindFirstChild("Remote Events").Respawn:FireServer()
 wait(6)
 print("redoing")
+end
+end
+
+function Spleeffucker()
+    while getgenv().SPLEEF == true do
+        wait()
+local args = {
+    [1] = workspace:FindFirstChild("Spleef Arena").Snow.Part
+}
+
+game:GetService("ReplicatedStorage"):FindFirstChild("Remote Events").BreakSnowEvent:FireServer(unpack(args))
+end
+end
+function Jerkoff()
+    while getgenv().JERK == true do
+        wait(0.4)
+local args = {
+    [1] = workspace:FindFirstChild("Spleef Arena").Snow.Part
+}
+
+game:GetService("ReplicatedStorage"):FindFirstChild("Remote Events").BreakSnowEvent:FireServer(unpack(args))
 end
 end
