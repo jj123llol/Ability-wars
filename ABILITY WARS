@@ -338,7 +338,44 @@ Tab:AddToggle({
 })
 
 
-
+function cp(x)
+    local plr = game.Players.LocalPlayer
+    local closest_player
+    for i, v in pairs(workspace:GetChildren()) do
+        if v:IsA('Model') then
+            if v:FindFirstChild("Humanoid") and v ~= plr.Character then
+                local distance = (plr.Character.HumanoidRootPart.Position - v.HumanoidRootPart.Position).Magnitude
+                if distance < x then
+                    closest_player = v
+                end
+            end
+        end
+    end
+    return closest_player
+end
+getgenv().KILLAURA = true
+game:GetService("RunService").Heartbeat:Connect(function(x)
+    if getgenv().KILLAURA then
+        local z = cp(15)
+        if z ~= nil then
+            local args = {
+                [1] = z,
+                [2] = z.HumanoidRootPart.Position,
+                [3] = 5,
+                [4] = z["Left Leg"]
+            }
+            game:GetService("ReplicatedStorage"):FindFirstChild("Remote Events").Punch:FireServer(unpack(args))
+        end
+        wait(.5)
+    end
+end)
+Tab:AddToggle({
+    Name = "Kill aura-credits to am noob",
+    Default = (bool),
+    Callback = function(bool)
+        getgenv().KILLAURA = bool
+    end
+})
 
 
 
@@ -483,6 +520,8 @@ firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, game:GetS
 wait()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-13149.4492, 94.1060104, -5017.93311, 0.083850868, 3.67989514e-08, -0.996478319, 6.74535414e-08, 1, 4.26050306e-08, 0.996478319, -7.07884595e-08, 0.083850868)
 wait(1)
+
+
 keypress(keys["backspace"])
 wait(0.5)
 keyrelease(keys["backspace"])
