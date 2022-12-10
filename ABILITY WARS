@@ -481,7 +481,7 @@ firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, game:GetS
 wait()
 firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, game:GetService("Workspace")["Map Items"].Moss, 0)
 wait()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-13142.7148, 94.522644, -5016.31006, -0.610860348, 7.84943168e-08, 0.791738391, -7.34011518e-09, 1, -1.04804947e-07, -0.791738391, -6.98326375e-08, -0.610860348)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-13149.4492, 94.1060104, -5017.93311, 0.083850868, 3.67989514e-08, -0.996478319, 6.74535414e-08, 1, 4.26050306e-08, 0.996478319, -7.07884595e-08, 0.083850868)
 wait(1)
 keypress(keys["backspace"])
 wait(0.5)
