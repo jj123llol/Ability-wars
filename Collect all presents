@@ -1,0 +1,122 @@
+
+--Ez
+
+
+
+
+
+
+
+
+
+
+
+local clickdetector = game:GetService("Workspace")["Collectable Presents"].B7.ClickDetector 
+
+fireclickdetector(clickdetector)
+
+
+
+
+local clickdetector = game:GetService("Workspace")["Collectable Presents"].C7.ClickDetector
+
+fireclickdetector(clickdetector)
+
+
+
+
+local clickdetector = game:GetService("Workspace")["Collectable Presents"].C6.ClickDetector
+
+fireclickdetector(clickdetector)
+
+
+
+
+
+local clickdetector = game:GetService("Workspace")["Collectable Presents"].B6.ClickDetector
+
+fireclickdetector(clickdetector)
+
+
+
+local clickdetector = game:GetService("Workspace")["Collectable Presents"].C5.ClickDetector
+
+fireclickdetector(clickdetector)
+
+
+
+local clickdetector = game:GetService("Workspace")["Collectable Presents"].B5.ClickDetector
+
+fireclickdetector(clickdetector)
+
+
+
+local clickdetector = game:GetService("Workspace")["Collectable Presents"].A1.ClickDetector
+
+fireclickdetector(clickdetector)
+
+
+local clickdetector = game:GetService("Workspace")["Collectable Presents"].A2.ClickDetector
+
+fireclickdetector(clickdetector)
+
+
+
+local clickdetector = game:GetService("Workspace")["Collectable Presents"].A3.ClickDetector
+
+fireclickdetector(clickdetector)
+
+
+local clickdetector = game:GetService("Workspace")["Collectable Presents"].C4.ClickDetector
+
+fireclickdetector(clickdetector)
+
+
+
+local clickdetector = game:GetService("Workspace")["Collectable Presents"].A4.ClickDetector
+
+fireclickdetector(clickdetector)
+
+
+local clickdetector = game:GetService("Workspace")["Collectable Presents"].A6.ClickDetector
+
+fireclickdetector(clickdetector)
+
+
+local clickdetector = game:GetService("Workspace")["Collectable Presents"].B3.ClickDetector
+
+fireclickdetector(clickdetector)
+
+
+local clickdetector = game:GetService("Workspace")["Collectable Presents"].C3.ClickDetector
+
+fireclickdetector(clickdetector)
+
+
+local clickdetector = game:GetService("Workspace")["Collectable Presents"].C2.ClickDetector
+
+fireclickdetector(clickdetector)
+
+local clickdetector = game:GetService("Workspace")["Collectable Presents"].B4.ClickDetector
+
+fireclickdetector(clickdetector)
+
+
+local clickdetector = game:GetService("Workspace")["Collectable Presents"].A5.ClickDetector
+
+fireclickdetector(clickdetector)
+
+
+local clickdetector = game:GetService("Workspace")["Collectable Presents"].B2.ClickDetector
+
+fireclickdetector(clickdetector)
+
+
+local clickdetector = game:GetService("Workspace")["Collectable Presents"].B1.ClickDetector
+
+fireclickdetector(clickdetector)
+
+
+local clickdetector = game:GetService("Workspace")["Collectable Presents"].C1.ClickDetector
+
+fireclickdetector(clickdetector)
